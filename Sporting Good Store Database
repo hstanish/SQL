@@ -1,0 +1,24 @@
+-- create a sporting goods store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, barcode INTEGER, stock INTEGER, price INTEGER);
+
+INSERT INTO store VALUES
+(1, 'baseball bat', 0140, 9, 200),
+(2, 'mit', 0130, 7, 100),
+(3, 'batting glove', 0150, 8, 50),
+(4, 'helmet', 0210, 3, 75),
+(5, 'pants', 0170, 9, 90),
+(6, 'cleets', 0220, 11, 165),
+(7, 'jock strap', 0189, 4, 45),
+(8, 'sunglasses', 0230, 7, 100),
+(9, 'tar', 0159, 13, 25),
+(10, 'socks', 0235, 10, 30),
+(11, 'sliders', 0350, 6, 50),
+(12, 'bag', 0470, 8, 175),
+(13, 'hat', 0270, 15, 40),
+(14, 'eye black', 1245, 15, 10),
+(15, 'sunflower seeds', 0318, 20, 3);
+SELECT * FROM store;
+
+-- display database ordered by price
+SELECT * FROM store ORDER BY price;
