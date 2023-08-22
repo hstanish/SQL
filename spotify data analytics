@@ -1,1 +1,47 @@
+--found average danceability
+SELECT artist_name,
+--track_name,
+avg (danceability)
 
+
+--found the 10 most popular track names
+FROM BIT_DB.Spotifydata
+
+GROUP BY artist_name
+
+
+SELECT artist_name,
+track_name,
+popularity
+
+
+FROM BIT_DB.spotifydata
+
+order by popularity desc
+limit 10
+
+
+--found the artist with the longest song
+SELECT artist_name,
+track_name,
+duration_ms
+
+FROM BIT_DB.spotifydata
+
+order by duration_ms desc
+limit 1
+
+
+--using a temporary table i found the average popularity
+WITH popularity_average_CTE AS (
+SELECT s.artist_name,
+AVG(s.popularity) AS average_popularity
+FROM SpotifyData s 
+GROUP BY s.artist_name
+)
+-- then for an avergae of 90 popularity or above i listed their name, average popularity, and named them top star 
+SELECT  artist_name,
+        average_popularity,
+        'Top Star' AS tag
+FROM popularity_average_CTE
+WHERE average_popularity>=90;
