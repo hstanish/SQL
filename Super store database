@@ -1,0 +1,20 @@
+List item name and price from superstore database
+SELECT item_name, price
+FROM superstore
+
+List the sum of the price of the items in the databate superstore and list the item name
+SELECT SUM(price), item_name
+FROM superstore
+GROUP BY item_name
+
+Find the count of each item sold in the kitchen supplies category from the superstore database
+SELECT COUNT(Price), item_name
+FROM superstore
+WHERE category="Kitchen Supplies"
+GROUP BY item_name
+
+How many air purifies are in stock?
+SELECT stock_quantity, item_name
+FROM superstore
+WHERE item_name="Air Purifier"
+GROUP BY item_name
